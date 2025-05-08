@@ -61,7 +61,7 @@ const ContactPage = () => {
                 <MapPin size={24} className="text-primary mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Our Address</h3>
-                  <p className="text-gray-600">123 Health Street, Wellness Avenue, Bengaluru, Karnataka, 560001, India</p>
+                  <p className="text-gray-600">439 Electronic city, Bengaluru, Karnataka, 560100, India</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -75,12 +75,12 @@ const ContactPage = () => {
                 <Phone size={24} className="text-primary mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-700">Call Us</h3>
-                  <p className="text-gray-600">+91 (80) 1234-5678</p>
+                  <p className="text-gray-600">+91 8660204905</p>
                 </div>
               </div>
             </div>
             <div className="mt-8">
-               <img  alt="Map showing pharmacy location in Bengaluru" className="w-full h-64 rounded-lg object-cover" src="https://images.unsplash.com/photo-1587538782325-c60e0c1c0f1f" />
+               <img  alt="Map showing pharmacy location in Bengaluru" className="w-full h-64 rounded-lg object-cover" src="/images/contact.jpg" />
             </div>
           </motion.div>
 
