@@ -61,7 +61,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
               <Phone size={14} className="mr-1" />
-              <span>24/7 Support: +91 (80) 1234-5678</span>
+              <span>24/7 Support: +91 8660204905</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -85,7 +85,6 @@ const Navbar = () => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <img  alt="MediPharm Logo" className="h-10 mr-2" src="https://images.unsplash.com/photo-1629904000270-2f1659169390" />
             </motion.div>
             <span className="text-3xl font-bold tracking-tight">Medi<span className="text-green-200">Pharm</span></span>
           </Link>
