@@ -99,7 +99,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-lg blur-lg"></div>
               <div className="relative bg-white rounded-lg overflow-hidden shadow-xl">
-                <img  alt="Pharmacy services" className="w-full h-auto rounded-lg" src="https://images.unsplash.com/photo-1701117553039-d39c1ee3f3cd" />
+                <img  alt="Pharmacy services" className="w-full h-auto rounded-lg" src="/images/home image.jpg" />
               </div>
               
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg p-4 shadow-lg">
