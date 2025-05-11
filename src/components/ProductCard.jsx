@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -13,39 +12,33 @@ const ProductCard = ({ product }) => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { toast } = useToast();
 
-  if (!product) {
-    return null; 
-  }
+  if (!product) return null;
 
   const handleAddToCart = () => {
     addToCart(product);
     toast({
-      title: "Added to Cart",
+      title: 'Added to Cart',
       description: `${product.name} has been added to your cart.`,
     });
   };
 
   const handleToggleWishlist = () => {
-    if (isInWishlist(product.id)) {
-      removeFromWishlist(product.id);
-    } else {
-      addToWishlist(product);
-    }
+    isInWishlist(product.id) ? removeFromWishlist(product.id) : addToWishlist(product);
   };
 
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <Star
-          key={i}
-          size={16}
-          className={`mr-0.5 ${i <= rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
-        />
-      );
-    }
-    return stars;
-  };
+  const renderStars = (rating) =>
+    [...Array(5)].map((_, i) => (
+      <Star
+        key={i}
+        size={16}
+        className={`mr-0.5 ${i + 1 <= rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+      />
+    ));
+
+  // Use first image from product.images array, or fallback
+  const imageUrl = product.images && product.images.length > 0
+    ? product.images[0]
+    : 'https://via.placeholder.com/300x200.png?text=No+Image';
 
   return (
     <motion.div
@@ -56,10 +49,11 @@ const ProductCard = ({ product }) => {
     >
       <Link to={`/products/${product.id}`} className="block relative">
         <div className="w-full h-48 overflow-hidden">
-          <img 
+          <img
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             alt={product.name}
-           src="https://images.unsplash.com/photo-1559574326-b28980940fae" />
+            src={imageUrl}
+          />
         </div>
         {product.discount && (
           <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
@@ -67,7 +61,7 @@ const ProductCard = ({ product }) => {
           </div>
         )}
       </Link>
-      
+
       <Button
         size="icon"
         variant="ghost"
@@ -85,20 +79,24 @@ const ProductCard = ({ product }) => {
             {product.name}
           </Link>
         </h3>
-        <p className="text-xs text-gray-500 mb-2 flex-grow">{product.description.substring(0, 40)}...</p>
-        
+        <p className="text-xs text-gray-500 mb-2 flex-grow">
+          {product.description?.substring(0, 40)}...
+        </p>
+
         <div className="flex items-center mb-2">
           {renderStars(product.rating)}
           <span className="text-xs text-gray-500 ml-1">({product.reviewCount || 0} reviews)</span>
         </div>
-        
+
         <div className="flex items-baseline mb-3">
           <span className="text-xl font-bold text-primary">₹{product.price.toFixed(2)}</span>
           {product.originalPrice && (
-            <span className="text-sm text-gray-500 line-through ml-2">₹{product.originalPrice.toFixed(2)}</span>
+            <span className="text-sm text-gray-500 line-through ml-2">
+              ₹{product.originalPrice.toFixed(2)}
+            </span>
           )}
         </div>
-        
+
         <Button onClick={handleAddToCart} className="w-full mt-auto" size="sm">
           <ShoppingCart size={16} className="mr-2" /> Add to Cart
         </Button>
