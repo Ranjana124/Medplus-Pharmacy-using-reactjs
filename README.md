@@ -28,15 +28,9 @@ MediPharm is a responsive and user-friendly web application built using **React.
 
 ---
 ## 📸 Screenshots
+<img align="center" alt="readme_image" src="public/homepage.png" />
 
-### 📷 Homepage
-![Homepage Screenshot](./screenshots/homepage.png)
 
-### 📷 Product Page
-![Product Page Screenshot](./screenshots/product-page.png)
-
-### 📷 Cart Page
-![Cart Screenshot](./screenshots/cart.png)
 ---
 ## 📦 Installation
 
